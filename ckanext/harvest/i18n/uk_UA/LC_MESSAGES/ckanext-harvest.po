@@ -26,15 +26,15 @@ msgstr "назва"
 
 #: ckanext/harvest/controllers/view.py:31
 msgid "Not authorized to see this page"
-msgstr "Не авторизований користувач не може переглядати цю сторінку"
+msgstr "Неавторизований користувач не може переглядати цю сторінку"
 
 #: ckanext/harvest/controllers/view.py:51
 msgid "Harvesting source successfully cleared"
-msgstr "Джерело харвестингу успішно очищений"
+msgstr "Джерело (ресурс) харвестингу успішно видалено"
 
 #: ckanext/harvest/controllers/view.py:53
 msgid "Harvesting source successfully inactivated"
-msgstr "Джерело харвестингу успішно інактивовано"
+msgstr "Джерело (ресурс) харвестингу успішно деактивовано"
 
 #: ckanext/harvest/controllers/view.py:57
 #: ckanext/harvest/controllers/view.py:71
@@ -47,26 +47,28 @@ msgstr "Джерело харвестингу успішно інактивов�
 #: ckanext/harvest/logic/auth/delete.py:18 ckanext/harvest/logic/auth/get.py:33
 #: ckanext/harvest/logic/auth/update.py:19
 msgid "Harvest source not found"
-msgstr "Джерело харвестингу не знайдено"
+msgstr "Джерело (ресурс) харвестингу не знайдено"
 
 #: ckanext/harvest/controllers/view.py:68
 msgid "Harvest will start shortly. Refresh this page for updates."
-msgstr "Харвестинг розпочнеться незабаром. Оновити цю сторінку для оновлень."
+msgstr "Харвестинг розпочнеться незабаром. Оновіть цю сторінку для оновлень."
 
 #: ckanext/harvest/controllers/view.py:76
 msgid ""
 "Cannot create new harvest jobs on inactive sources. First, please change "
 "the source status to \"active\"."
-msgstr "Не вдається створити нове завдання збору на неактивні джерела. По-перше, будь ласка, змініть "
-"вихідний статус до \"активний\"."
+msgstr ""
+"Не вдається створити нове завдання збору для деактивованого джерела (ресурсу). По-перше, будь ласка, змініть "
+"вихідний статус на \"активний\"."
+
 
 #: ckanext/harvest/controllers/view.py:84
 msgid "A harvest job has already been scheduled for this source"
-msgstr "Для цього джерела харвестингу вже заплановано завдання збору"
+msgstr "Для цього джерела (ресурсу) харвестингу вже заплановано завдання збору"
 
 #: ckanext/harvest/controllers/view.py:96
 msgid "Harvest source cleared"
-msgstr "Джерело харвестингу очищено"
+msgstr "Джерело (ресурс) харвестингу очищено"
 
 #: ckanext/harvest/controllers/view.py:126
 msgid "No content found"
@@ -75,31 +77,32 @@ msgstr "Нічого не знайдено"
 #: ckanext/harvest/controllers/view.py:197
 #: ckanext/harvest/controllers/view.py:238
 msgid "Harvest job not found"
-msgstr "Джерело харвестингу не знайдено"
+msgstr "Джерело (ресурс) харвестингу не знайдено"
 
 #: ckanext/harvest/controllers/view.py:235
 msgid "Harvest job stopped"
-msgstr "Завдання харвестингу зупинилося"
+msgstr "Завдання харвестингу зупинино"
 
 #: ckanext/harvest/controllers/view.py:252
 #: ckanext/harvest/templates/source/admin.html:15
 #: ckanext/harvest/templates/source/job/list.html:13
 msgid "No jobs yet for this source"
-msgstr "Ще немає жодних завдань для цього джерела"
+msgstr "Ще немає жодних завдань для цього джерела (ресурсу)"
 
 #: ckanext/harvest/logic/action/update.py:578
 msgid ""
 "This is a failure-notification of the latest harvest job ({0}) set-up in "
 "{1}."
 msgstr ""
+"Завдання {1} для джерела (ресурсу) ({0}) виконати не вдалося."
 
 #: ckanext/harvest/logic/action/update.py:581
 msgid "Harvest Source: {0}"
-msgstr "Джерело харвестингу: {0}"
+msgstr "Джерело (ресурс) харвестингу: {0}"
 
 #: ckanext/harvest/logic/action/update.py:583
 msgid "Harvester-Configuration: {0}"
-msgstr ""
+msgstr "Конфігурація харвестингу: {0}"
 
 #: ckanext/harvest/logic/action/update.py:587
 msgid "Organization: {0}"
@@ -115,11 +118,11 @@ msgstr "Створено: {0}"
 
 #: ckanext/harvest/logic/action/update.py:592
 msgid "Finished: {0}"
-msgstr "Завершений: {0}"
+msgstr "Завершено: {0}"
 
 #: ckanext/harvest/logic/action/update.py:596
 msgid "Records in Error: {0}"
-msgstr "Записи у помилці: {0}"
+msgstr "Строки з помилками: {0}"
 
 #: ckanext/harvest/logic/action/update.py:609
 #: ckanext/harvest/templates/source/job/read.html:18
@@ -143,21 +146,21 @@ msgid ""
 "Administrator for {0}. Please do not reply to this email as it was sent "
 "from a non-monitored address."
 msgstr ""
-"Ви отримуєте цей електронний лист, оскільки в даний момент ви налаштували як"
-"Адміністратор для {0}. Не відповідайте на цей електронний лист, оскільки його було надіслано"
-"з неперевіреної адреси."
+"Ви отримали цього листа, оскільки в даний момент Ви вказані як "
+"Адміністратор для {0}. Не відповідайте на цей лист, оскільки його було надіслано "
+"автоматично."
 
 #: ckanext/harvest/logic/auth/create.py:19
 msgid "User {0} not authorized to create harvest sources"
-msgstr "Користувач {0} не має повноважень створювати джерела харвестингу"
+msgstr "Користувач {0} не має повноважень створювати джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/logic/auth/create.py:42
 msgid "User not authorized to create a job for source {0}"
-msgstr ""
+msgstr "Користувач не має прав для створення завдання для джерела(ресурса) {0}"
 
 #: ckanext/harvest/logic/auth/create.py:52
 msgid "Only sysadmins can create harvest jobs for all sources"
-msgstr "Користувач не має права створювати завдання для джерела {0}"
+msgstr "Тільки сисадміни можуть створювати завдання для зарвестингу всіх джерел(ресурсів)"
 
 #: ckanext/harvest/logic/auth/create.py:63
 msgid "Only the sysadmins can create harvest objects"
@@ -165,27 +168,27 @@ msgstr "Тільки сисадмини можуть створювати об'�
 
 #: ckanext/harvest/logic/auth/delete.py:27
 msgid "User {0} not authorized to delete harvest source {1}"
-msgstr "Користувач {0} не має права видаляти джерело харвестингу {1}"
+msgstr "Користувач {0} не має права видаляти джерело (ресурсу) харвестингу {1}"
 
 #: ckanext/harvest/logic/auth/get.py:42
 msgid "User {0} not authorized to read harvest source {1}"
-msgstr "Користувач {0} не має повноважень читати джерело харвестингу {1}"
+msgstr "Користувач {0} не має повноважень читати джерело (ресурсу) харвестингу {1}"
 
 #: ckanext/harvest/logic/auth/get.py:82
 msgid "User {0} not authorized to see jobs from source {1}"
-msgstr "Користувач {0} не має повноважень переглядати завдання з джерела {1}"
+msgstr "Користувач {0} не авторизовано для зміни завдань для джерела (ресурсу) {1}"
 
 #: ckanext/harvest/logic/auth/get.py:104
 msgid "User {0} not authorized to list jobs for source {1}"
-msgstr "Користувач {0} не авторизований для переліку завдань для джерела {1}"
+msgstr "Користувач {0} не авторизований для переліку завдань для джерела (ресурсу) {1}"
 
 #: ckanext/harvest/logic/auth/update.py:28
 msgid "User {0} not authorized to update harvest source {1}"
-msgstr "Користувач {0} не має повноважень оновлювати джерело харвестингу {1}"
+msgstr "Користувач {0} не має повноважень оновлювати джерело (ресурса) харвестингу {1}"
 
 #: ckanext/harvest/logic/auth/update.py:37
 msgid "Only sysadmins can clear history for all harvest jobs"
-msgstr ""
+msgstr "Тільки сисадмини можуть перезавантажити всіх об’єкти харвестингу"
 
 #: ckanext/harvest/logic/auth/update.py:56
 msgid "Only sysadmins can reimport all harvest objects"
@@ -197,12 +200,12 @@ msgstr "Тільки системні адміністратори можуть 
 
 #: ckanext/harvest/logic/auth/update.py:100
 msgid "Only sysadmins can reindex all harvest sources"
-msgstr "Тільки системні адміністратори можуть індексувати всі джерела харвестингу"
+msgstr "Тільки системні адміністратори можуть індексувати всі джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/index.html:3
 #: ckanext/harvest/templates/index.html:21
 msgid "Harvesting Sources"
-msgstr "Джерела харвестингу"
+msgstr "Джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/index.html:24
 #: ckanext/harvest/templates/snippets/job_details.html:76
@@ -211,7 +214,7 @@ msgstr "Статус"
 
 #: ckanext/harvest/templates/index.html:29
 msgid "Add a harvesting source"
-msgstr "Додати джерело харвестингу"
+msgstr "Додати джерело (ресурс) харвестингу"
 
 #: ckanext/harvest/templates/index.html:39
 msgid "View"
@@ -239,128 +242,127 @@ msgstr "Активний"
 
 #: ckanext/harvest/templates/index.html:47
 msgid "Statistics"
-msgstr ""
+msgstr "Статистика"
 
 #. Appears in harvest source table 'date of next harvest
 #: ckanext/harvest/templates/index.html:49
 msgid "Next Harvest"
-msgstr ""
+msgstr "Наступний харвестинг"
 
 #. Appears in harvest source table date created
 #: ckanext/harvest/templates/index.html:51
 #: ckanext/harvest/templates/snippets/job_details.html:52
 msgid "Created"
-msgstr ""
+msgstr "Створено"
 
 #: ckanext/harvest/templates/index.html:85
-#, fuzzy
 #| msgid "{number} harvest source found"
 #| msgid_plural "{number} harvest sources found"
 msgid "No harvest sources defined yet."
-msgstr ""
+msgstr "Джерела (ресурси) для харвестингу не визначено"
 
 #: ckanext/harvest/templates/snippets/add_source_button.html:6
 #: ckanext/harvest/templates/source/org_source_list.html:11
 msgid "Add Harvest Source"
-msgstr ""
+msgstr "Додати джерело (ресурс) харвестингу"
 
 #: ckanext/harvest/templates/snippets/job_details.html:26
 #: ckanext/harvest/templates/source/job/list.html:44
 msgid "errors"
-msgstr ""
+msgstr "помилки"
 
 #: ckanext/harvest/templates/snippets/job_details.html:41
 msgid "Details"
-msgstr ""
+msgstr "Деталі"
 
 #: ckanext/harvest/templates/snippets/job_details.html:48
 msgid "Id"
-msgstr ""
+msgstr "Ідентифікатор"
 
 #: ckanext/harvest/templates/snippets/job_details.html:60
 msgid "Started"
-msgstr ""
+msgstr "Розпочато"
 
 #: ckanext/harvest/templates/snippets/job_details.html:68
 msgid "Finished"
-msgstr ""
+msgstr "Завершено"
 
 #: ckanext/harvest/templates/snippets/job_error_summary.html:18
 msgid "Count"
-msgstr ""
+msgstr "Кількість"
 
 #: ckanext/harvest/templates/snippets/job_error_summary.html:19
 msgid "Message"
-msgstr ""
+msgstr "Повідомлення"
 
 #: ckanext/harvest/templates/snippets/package_list_empty.html:1
 msgid "There are no datasets associated to this harvest source."
-msgstr ""
+msgstr "Немає даних, пов’язаних з цим джерелом (ресурсом) харвестингу"
 
 #: ckanext/harvest/templates/snippets/search_result_text.html:4
 msgid "{number} harvest source found for \"{query}\""
 msgid_plural "{number} harvest sources found for \"{query}\""
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "знайдено {number} джерел (ресурсів) харветингу для \"{query}\""
+msgstr[1] "знайдено {number} джерело (ресурс) харветингу для \"{query}\""
+msgstr[2] "знайдено {number} джерела (ресурсів) харветингу для \"{query}\""
 
 #: ckanext/harvest/templates/snippets/search_result_text.html:5
 #: ckanext/harvest/templates/source/org_source_list.html:17
 #: ckanext/harvest/templates/source/search_2.0.html:27
 msgid "Sorry no harvest sources found for \"{query}\""
-msgstr ""
+msgstr "Нажаль, джерел (ресурсів) харвестингу для \"{query}\" не знайдено"
 
 #: ckanext/harvest/templates/snippets/search_result_text.html:6
 msgid "{number} harvest source found"
 msgid_plural "{number} harvest sources found"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "знайдено {number} джерел (ресурсів) харвестингу"
+msgstr[1] "знайдено {number} джерел (ресурс) харвестингу"
+msgstr[2] "знайдено {number} джерела (ресурсів) харвестингу"
 
 #: ckanext/harvest/templates/snippets/search_result_text.html:7
 #: ckanext/harvest/templates/source/org_source_list.html:25
 msgid "Sorry no harvest sources found"
-msgstr ""
+msgstr "Нажаль джерел (ресурсів) харвестингу не знайдено"
 
 #: ckanext/harvest/templates/snippets/source_item.html:28
 msgid "Draft"
-msgstr ""
+msgstr "Чернетка"
 
 #: ckanext/harvest/templates/snippets/source_item.html:30
 #: ckanext/harvest/templates/source/new_source_form.html:120
 msgid "Deleted"
-msgstr ""
+msgstr "Видалено"
 
 #: ckanext/harvest/templates/snippets/source_item.html:37
 #: ckanext/harvest/templates/source/about.html:9
 #: ckanext/harvest/templates/source/read_base.html:25
 msgid "There is no description for this harvest source"
-msgstr ""
+msgstr "Опис для джерела (ресурсу) харвестингу відсутній"
 
 #: ckanext/harvest/templates/snippets/source_item.html:42
 #: ckanext/harvest/templates/source/read.html:5
 #: ckanext/harvest/templates/source/read_base.html:29
 #: ckanext/harvest/templates/source/read_base.html:53
 msgid "Datasets"
-msgstr ""
+msgstr "Набори даних"
 
 #: ckanext/harvest/templates/snippets/source_item.html:45
 #: ckanext/harvest/templates/source/new_source_form.html:100
 msgid "Organization"
-msgstr ""
+msgstr "Розпорядник"
 
 #: ckanext/harvest/templates/source/admin.html:5
 msgid "Last Harvest Job"
-msgstr ""
+msgstr "Останнє завдання харвестингу"
 
 #: ckanext/harvest/templates/source/admin.html:11
 msgid "View full job report"
-msgstr ""
+msgstr "Переглянути повний звіт"
 
 #: ckanext/harvest/templates/source/admin_base.html:7
 #: ckanext/harvest/templates/source/read_base.html:4
 msgid "Admin"
-msgstr ""
+msgstr "Адмінистратор"
 
 #: ckanext/harvest/templates/source/admin_base.html:14
 msgid ""
@@ -369,36 +371,43 @@ msgid ""
 "datasets may take a significant amount of time to finish harvesting. "
 "Please confirm you would like us to start reharvesting."
 msgstr ""
+"Цей харвестинг має бути перезапущено для цього джерела (ресурсу). Локальні набори даних "
+"будуть перезаписані після любих оновлень джерела (ресурсу). Харвестинг джерел (ресурсів) з великою кількістю "
+"наборів даних може зайняти значний час. "
+"Будь ласка підтвердіть перезапуск харвестингу."
+
 
 #: ckanext/harvest/templates/source/admin_base.html:17
 msgid "Start a new harvesting job for this harvest source now"
-msgstr ""
+msgstr "Розпочати новий харвестинг для цього джерела (ресурсу) зараз"
 
 #: ckanext/harvest/templates/source/admin_base.html:19
 msgid "Reharvest"
-msgstr ""
+msgstr "Рехарвестинг"
 
 #: ckanext/harvest/templates/source/admin_base.html:27
 msgid "Stop"
-msgstr ""
+msgstr "Зупинити"
 
 #: ckanext/harvest/templates/source/admin_base.html:31
 msgid ""
 "Warning: This will remove all datasets for this source, as well as all "
 "previous job reports. Are you sure you want to continue?"
 msgstr ""
+"УВАГА: Це призведе до видалення всіх даних для цього джерела (ресурсу),"
+"а також всіх попередніх звітів про роботу. Ви впевнені що хочете продовжити?"
 
 #: ckanext/harvest/templates/source/admin_base.html:34
 msgid "Delete all harvest jobs and existing datasets from this source"
-msgstr ""
+msgstr "Видалити всі завдання харвестингу та існуючи набори даних з цього джерела (ресурсу)"
 
 #: ckanext/harvest/templates/source/admin_base.html:35
 msgid "Clear"
-msgstr ""
+msgstr "Очистити"
 
 #: ckanext/harvest/templates/source/admin_base.html:42
 msgid "View harvest source"
-msgstr ""
+msgstr "Переглянути джерело (ресурс) харвестингу"
 
 #: ckanext/harvest/templates/source/admin_base.html:61
 msgid "Dashboard"
@@ -406,7 +415,7 @@ msgstr ""
 
 #: ckanext/harvest/templates/source/admin_base.html:62
 msgid "Jobs"
-msgstr ""
+msgstr "Завдання"
 
 #: ckanext/harvest/templates/source/base.html:16
 msgid "Organizations"
@@ -420,24 +429,24 @@ msgstr ""
 #: ckanext/harvest/templates/source/org_source_list.html:19
 #: ckanext/harvest/templates/source/search.html:7
 msgid "Harvest Sources"
-msgstr ""
+msgstr "Розпорядники"
 
 #: ckanext/harvest/templates/source/edit.html:3
 msgid "Edit harvest source"
-msgstr ""
+msgstr "Джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/source/new.html:5
 msgid "Create Harvest Source"
-msgstr ""
+msgstr "Створити джерело (ресурс) харвестингу"
 
 #: ckanext/harvest/templates/source/new.html:11
 msgid "Create harvest source"
-msgstr ""
+msgstr "Створити джерело (ресурс) харвестингу"
 
 #: ckanext/harvest/templates/source/new.html:28
 #: ckanext/harvest/templates/source/search.html:3
 msgid "Harvest sources"
-msgstr ""
+msgstr "Джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/source/new.html:31
 msgid ""
@@ -446,6 +455,10 @@ msgid ""
 "servers or Web Accessible Folders (WAF) (depending on the actual "
 "harvesters enabled for this instance). "
 msgstr ""
+"Джерела(ресурси) харвестингу дозволяють импортувати до цього каталогу віддалені метадані. "
+"Віддаленими джерелами (ресурсами) можуть бути інші каталоги, такі як, наприклад, інші CKAN, CSW "
+"сервіси або  Web Accessible Folders (WAF) (в залежності від фактичної "
+"достыпності харвестингу для цього джерела (ресурсу)."
 
 #: ckanext/harvest/templates/source/new_source_form.html:8
 msgid "URL"
@@ -453,70 +466,76 @@ msgstr ""
 
 #: ckanext/harvest/templates/source/new_source_form.html:10
 msgid "This should include the http:// part of the URL"
-msgstr ""
+msgstr "Має містити http:// частину в URL"
 
 #: ckanext/harvest/templates/source/new_source_form.html:14
 msgid "Title"
-msgstr ""
+msgstr "Заголовок"
 
 #: ckanext/harvest/templates/source/new_source_form.html:14
 msgid "eg. A descriptive title"
-msgstr ""
+msgstr "наприклад, Пробний заголовок"
 
 #: ckanext/harvest/templates/source/new_source_form.html:21
 msgid "Name"
-msgstr ""
+msgstr "Назва"
 
 #: ckanext/harvest/templates/source/new_source_form.html:21
 msgid "eg. my-dataset"
-msgstr ""
+msgstr "наприклад, мій набір даних"
 
 #: ckanext/harvest/templates/source/new_source_form.html:26
 #: ckanext/harvest/templates/source/new_source_form.html:38
 msgid "This field is required"
 msgstr ""
 
+#: ckanext/harvest/templates/source/new_source_form.html:65
+msgid "Source type"
+msgstr "Тип джерела (ресурсу)"
+
 #: ckanext/harvest/templates/source/new_source_form.html:26
 msgid "Datapackage Language"
-msgstr ""
+msgstr "Мова наборів даних"
 
 #: ckanext/harvest/templates/source/new_source_form.html:38
 msgid "Update Frequency"
-msgstr ""
+msgstr "Частота оновлення"
 
 #: ckanext/harvest/templates/source/new_source_form.html:49
 msgid "Purpose of collecting information"
-msgstr ""
+msgstr "Підстава та призначення збору інформації"
 
 #: ckanext/harvest/templates/source/new_source_form.html:57
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #: ckanext/harvest/templates/source/new_source_form.html:61
 msgid "Tags"
-msgstr ""
+msgstr "Тагі"
 
 #: ckanext/harvest/templates/source/new_source_form.html:61
-msgid "eg. economy, mental health, government"
-msgstr ""
+msgid "eg. economy, health, government"
+msgstr "наприклад, економіка, здоров’я, уряд"
 
 #: ckanext/harvest/templates/source/new_source_form.html:83
 msgid "Configuration"
-msgstr ""
+msgstr "Конфігурація"
 
 #: ckanext/harvest/templates/source/new_source_form.html:103
 msgid "No organization"
-msgstr ""
+msgstr "Розпорядник відсутний"
 
 #: ckanext/harvest/templates/source/new_source_form.html:116
 msgid "State"
-msgstr ""
+msgstr "Стан"
 
 #: ckanext/harvest/templates/source/new_source_form.html:129
 msgid ""
 "This will flag the source as deleted but keep all its datasets and "
 "previous jobs. Are you sure you want to delete this harvest source?"
 msgstr ""
+"Джерело (ресурс) буде позначено як видалене але буде збережено всі його набори даних та "
+"попередні завдання. Ви впевнені що бажаєте видалити це джерело (ресурс) харвестингу?"
 
 #: ckanext/harvest/templates/source/new_source_form.html:130
 msgid ""
@@ -524,6 +543,9 @@ msgid ""
 "its datasets, as well as all previous job reports. Are you sure you want "
 "to continue?"
 msgstr ""
+"УВАГА: Окрім видалення цього джерела(ресурсу), цякоманда видалить всі "
+"його набори даних, а також всі попередні звіти про завдання. Ви впевнені що бажаєте "
+"продовжити?"
 
 #: ckanext/harvest/templates/source/new_source_form.html:133
 msgid "Delete"
@@ -531,37 +553,37 @@ msgstr ""
 
 #: ckanext/harvest/templates/source/new_source_form.html:139
 msgid "Delete source"
-msgstr ""
+msgstr "Видалити"
 
 #: ckanext/harvest/templates/source/new_source_form.html:144
 msgid "Delete and clear source"
-msgstr ""
+msgstr "Видалити джерело (ресурс)"
 
 #: ckanext/harvest/templates/source/old_new_source_form.html:5
 msgid "Return to the harvest sources list"
-msgstr ""
+msgstr "Повернутися до списку джерел (ресурсів) харвестингу"
 
 #: ckanext/harvest/templates/source/org_source_list.html:15
 #: ckanext/harvest/templates/source/search_2.0.html:25
 msgid " found for \"{query}\""
-msgstr ""
+msgstr "знайдено для \"{query}\""
 
 #: ckanext/harvest/templates/source/org_source_list.html:31
 msgid "Search sources..."
-msgstr ""
+msgstr "Пошук джерела(ресурсу)"
 
 #: ckanext/harvest/templates/source/org_source_list.html:32
 #: ckanext/harvest/templates/source/search_2.0.html:8
 msgid "Search"
-msgstr ""
+msgstr "Пошук"
 
 #: ckanext/harvest/templates/source/read_base.html:22
 msgid "read more"
-msgstr ""
+msgstr "читати далі"
 
 #: ckanext/harvest/templates/source/read_base.html:34
 msgid "Back To Harvest Sources Page"
-msgstr ""
+msgstr "Повернутись до сторінки джерел (ресурсів) харвестингу"
 
 #: ckanext/harvest/templates/source/read_base.html:54
 msgid "About"
@@ -569,84 +591,87 @@ msgstr ""
 
 #: ckanext/harvest/templates/source/search.html:44
 msgid "Relevance"
-msgstr ""
+msgstr "Релевантністю"
 
 #: ckanext/harvest/templates/source/search.html:45
 msgid "Name Ascending"
-msgstr ""
+msgstr "Назвою (від А до Я)"
 
 #: ckanext/harvest/templates/source/search.html:46
 msgid "Name Descending"
-msgstr ""
+msgstr "Назвою (від Я до А)"
 
 #: ckanext/harvest/templates/source/search.html:47
 msgid "Last Modified"
-msgstr ""
+msgstr "Востаннє внесеними змінами"
 
 #: ckanext/harvest/templates/source/search.html:48
 msgid "Popular"
-msgstr ""
+msgstr "За популярністю"
 
 #: ckanext/harvest/templates/source/search.html:50
 msgid "Search harvest sources..."
-msgstr ""
+msgstr "Пошук джерела(ресурсу) харвестингу"
 
 #: ckanext/harvest/templates/source/search_2.0.html:7
 msgid "Search..."
-msgstr ""
+msgstr "Пошук..."
 
 #: ckanext/harvest/templates/source/search_2.0.html:29
 msgid "All harvest sources"
-msgstr ""
+msgstr "Всі джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/source/search_2.0.html:42
 msgid "Remove"
-msgstr ""
+msgstr "Видалити"
 
 #: ckanext/harvest/templates/source/search_2.0.html:48
 msgid "Try another search term, browse the sources below or "
-msgstr ""
+msgstr "Спробуйте інший пошуковий термін, перегляньте джерело(ресурс) нижче або "
 
 #: ckanext/harvest/templates/source/search_2.0.html:49
 msgid "add a new one"
-msgstr ""
+msgstr "додати ще"
 
 #: ckanext/harvest/templates/source/search_2.0.html:55
 msgid ""
 " <p><strong>There was an error while searching.</strong> Please try "
 "again.</p> "
 msgstr ""
+" <p><strong>Помилка під час пошуку.</strong> Будь ласка, спробуйте "
+"ще раз.</p> "
+
 
 #: ckanext/harvest/templates/source/job/list.html:5
 #: ckanext/harvest/templates/source/job/list.html:10
 msgid "Harvest Jobs"
-msgstr ""
+msgstr "Завдання харвестингу"
 
 #: ckanext/harvest/templates/source/job/list.html:21
 msgid "Job: "
-msgstr ""
+msgstr "Завдання: "
 
 #: ckanext/harvest/templates/source/job/list.html:28
 msgid "Started:"
-msgstr ""
+msgstr "Розпочато:"
 
 #: ckanext/harvest/templates/source/job/list.html:30
 #: ckanext/harvest/templates/source/job/list.html:35
 msgid "Not yet"
-msgstr ""
+msgstr "Ще ні"
 
 #: ckanext/harvest/templates/source/job/list.html:33
 msgid "Finished:"
-msgstr ""
+msgstr "Закінчено"
 
 #: ckanext/harvest/templates/source/job/read.html:3
 #: ckanext/harvest/templates/source/job/read.html:12
 msgid "Job Report"
-msgstr ""
+msgstr "Звіт про виконання"
 
 #: ckanext/harvest/templates/source/job/read.html:9
 msgid "Back to job list"
-msgstr ""
+msgstr "Повернутися до списку завдань"
 
 #: ckanext/harvest/templates/source/job/read.html:19
 msgid "No errors for this job"
@@ -654,50 +679,26 @@ msgstr ""
 
 #: ckanext/harvest/templates/source/job/read.html:23
 msgid "Only the 20 most frequent errors are shown"
-msgstr ""
+msgstr "Відображено лише 20 найчастіших помилок"
 
 #: ckanext/harvest/templates/source/job/read.html:30
 #: ckanext/harvest/templates/source/job/read.html:57
 msgid "Document Errors"
-msgstr ""
+msgstr "Помилки документу"
 
 #: ckanext/harvest/templates/source/job/read.html:37
 msgid "Error Report"
-msgstr ""
+msgstr "Звіт про помилки"
 
 #: ckanext/harvest/templates/source/job/read.html:58
 msgid "documents with errors"
-msgstr ""
+msgstr "документи з помилками"
 
 #: ckanext/harvest/templates/source/job/read.html:69
 msgid "Remote content"
-msgstr ""
+msgstr "Видалити контент"
 
 #: ckanext/harvest/templates/source/job/read.html:73
 msgid "Local content"
-msgstr ""
-
-#~ msgid "Group not found"
-#~ msgstr ""
-
-#~ msgid "Unauthorized to read group %s"
-#~ msgstr ""
-
-#~ msgid "Groups"
-#~ msgstr ""
-
-#~ msgid "Formats"
-#~ msgstr ""
-
-#~ msgid "Licence"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Cannot create new harvest jobs on "
-#~ "inactive sources. First, please change "
-#~ "the source status to 'active'."
-#~ msgstr ""
-
-#~ msgid "Update frequency"
-#~ msgstr ""
+msgstr "Локальний контент"
 

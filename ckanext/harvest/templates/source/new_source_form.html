@@ -58,11 +58,11 @@
 
   {% block package_basic_fields_tags %}
     {% set tag_attrs = {'data-module': 'autocomplete', 'data-module-tags': '', 'data-module-source': '/api/2/util/tag/autocomplete?incomplete=?'} %}
-    {{ form.input('tag_string', id='field-tags', label=_('Tags'), placeholder=_('eg. economy, mental health, government'), value=data.tag_string, error=errors.tag_string,  is_required=true, classes=['control-full'], attrs=tag_attrs)}}
+    {{ form.input('tag_string', id='field-tags', label=_('Tags'), placeholder=_('eg. economy, health, government'), value=data.tag_string, error=errors.tag_string,  is_required=true, classes=['control-full'], attrs=tag_attrs)}}
   {% endblock %}
 
   <div class="harvest-types form-group control-group">
-    <label class="control-label">Source type</label>
+    <label class="control-label">{% trans %}Source type{% endtrans %}</label>
     <div class="controls">
       {% for harvester in h.harvesters_info() %}
         {% set checked = False %}
