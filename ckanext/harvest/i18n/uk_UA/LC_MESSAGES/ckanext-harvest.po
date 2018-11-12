@@ -549,15 +549,15 @@ msgstr ""
 
 #: ckanext/harvest/templates/source/new_source_form.html:133
 msgid "Delete"
-msgstr ""
+msgstr "Видалити"
 
 #: ckanext/harvest/templates/source/new_source_form.html:139
 msgid "Delete source"
-msgstr "Видалити"
+msgstr "Видалити джерело"
 
 #: ckanext/harvest/templates/source/new_source_form.html:144
 msgid "Delete and clear source"
-msgstr "Видалити джерело (ресурс)"
+msgstr "Видалити та відчистити джарело"
 
 #: ckanext/harvest/templates/source/old_new_source_form.html:5
 msgid "Return to the harvest sources list"
