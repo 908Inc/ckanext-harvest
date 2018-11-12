@@ -407,7 +407,7 @@ msgstr "Очистити"
 
 #: ckanext/harvest/templates/source/admin_base.html:42
 msgid "View harvest source"
-msgstr "Переглянути джерело (ресурс) харвестингу"
+msgstr "Переглянути джерело"
 
 #: ckanext/harvest/templates/source/admin_base.html:61
 msgid "Dashboard"
