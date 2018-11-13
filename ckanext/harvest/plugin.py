@@ -16,6 +16,8 @@ except ImportError:
 
 from ckan.lib.navl import dictization_functions
 
+from ckan.plugins import toolkit as tk
+
 from ckanext.harvest import logic as harvest_logic
 
 from ckanext.harvest.model import setup as model_setup
@@ -309,8 +311,8 @@ class Harvest(p.SingletonPlugin, DefaultDatasetForm, DefaultTranslation):
         if package_type <> 'harvest':
             return facets_dict
 
-        return OrderedDict([('frequency', 'Frequency'),
-                            ('source_type','Type'),
+        return OrderedDict([('frequency', tk._('Frequency')),
+                            ('source_type', tk._('Type')),
                            ])
 
     def organization_facets(self, facets_dict, organization_type, package_type):
