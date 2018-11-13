@@ -315,9 +315,10 @@ msgstr "Нажаль, джерел (ресурсів) харвестингу д�
 #: ckanext/harvest/templates/snippets/search_result_text.html:6
 msgid "{number} harvest source found"
 msgid_plural "{number} harvest sources found"
-msgstr[0] "знайдено {number} джерел (ресурсів) харвестингу"
-msgstr[1] "знайдено {number} джерело (ресурс) харвестингу"
-msgstr[2] "знайдено {number} джерела (ресурсів) харвестингу"
+msgstr[0] "Знайдено джерел (ресурсів) харвестингу: {number}"
+# msgstr[0] "знайдено {number} джерел (ресурсів) харвестингу"
+# msgstr[1] "знайдено {number} джерело (ресурс) харвестингу"
+# msgstr[2] "знайдено {number} джерела (ресурсів) харвестингу"
 
 #: ckanext/harvest/templates/snippets/search_result_text.html:7
 #: ckanext/harvest/templates/source/org_source_list.html:25
