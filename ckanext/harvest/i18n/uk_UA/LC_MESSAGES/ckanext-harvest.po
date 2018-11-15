@@ -51,7 +51,7 @@ msgstr "Джерело (ресурс) харвестингу не знайден
 
 #: ckanext/harvest/controllers/view.py:68
 msgid "Harvest will start shortly. Refresh this page for updates."
-msgstr "Харвестинг розпочнеться незабаром. Оновіть цю сторінку для оновлень."
+msgstr "Харвестинг розпочнеться незабаром. Оновіти сторінку."
 
 #: ckanext/harvest/controllers/view.py:76
 msgid ""
@@ -558,7 +558,7 @@ msgstr "Видалити джерело"
 
 #: ckanext/harvest/templates/source/new_source_form.html:144
 msgid "Delete and clear source"
-msgstr "Видалити та відчистити джарело"
+msgstr "Видалити та відчистити джерело"
 
 #: ckanext/harvest/templates/source/old_new_source_form.html:5
 msgid "Return to the harvest sources list"
