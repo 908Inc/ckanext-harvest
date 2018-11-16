@@ -607,18 +607,9 @@ class DGUAHarvesterSource(model.Package):
     @classmethod
     def get_deleted_sources(cls, status=None, organization='all', order_by='metadata_created',
             direction='desc', offset=None, limit=None):
-        # query = Session.query(cls, model.Group) \
-        #     .join(model.Group, cls.owner_org == model.Group.id) \
-        #     .join(model.PackageExtra, cls.id == model.PackageExtra.package_id)\
-        #     .filter(cls.type == 'harvest')\
-        #     .filter(cls.state == 'deleted')
         query = Session.query(cls)\
             .filter(cls.state == 'deleted')\
             .filter(cls.type == 'harvest')
-        print query.all()
-
-        # query = query.filter(model.PackageExtra.key == 'is_datapackage') \
-        #     .filter(model.PackageExtra.value == 'true')
 
         if organization != 'all' and organization != '':
             query = query.filter(model.Group.name == organization)
