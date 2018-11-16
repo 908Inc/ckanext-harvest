@@ -8,3 +8,6 @@ class SourceController(PackageController):
         if not c.userobj or not c.userobj.sysadmin:
             abort(404)
         return super(SourceController, self).new(data, errors, error_summary)
+
+    def show_deleted(self):
+        return 'DELETED'
