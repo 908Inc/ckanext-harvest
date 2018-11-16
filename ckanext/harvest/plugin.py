@@ -228,9 +228,11 @@ class Harvest(p.SingletonPlugin, DefaultDatasetForm, DefaultTranslation):
         # Most of the routes are defined via the IDatasetForm interface
         # (ie they are the ones for a package type)
         controller = 'ckanext.harvest.controllers.view:ViewController'
-        new_source_controller = 'ckanext.harvest.controllers.source:SourceController'
+        source_controller = 'ckanext.harvest.controllers.source:SourceController'
 
-        map.connect('harvest_source_new', '/harvest/new', controller=new_source_controller, action='new')
+        map.connect('harvest_source_new', '/harvest/new', controller=source_controller, action='new')
+        map.connect('harvest_sources_deleted', '/harvest/deleted', controller=source_controller, action='show_deleted')
+        # map.connect('harvest_source_list', '/harvest', controller=new_source_controller, action='search')
         map.connect('{0}_delete'.format(DATASET_TYPE_NAME), '/' + DATASET_TYPE_NAME + '/delete/:id',controller=controller, action='delete')
         map.connect('{0}_refresh'.format(DATASET_TYPE_NAME), '/' + DATASET_TYPE_NAME + '/refresh/:id',controller=controller,
                 action='refresh')

@@ -9,13 +9,14 @@ from sqlalchemy import Column
 from sqlalchemy import ForeignKey
 from sqlalchemy import types
 from sqlalchemy import Index
+from sqlalchemy import desc, asc
 from sqlalchemy.engine.reflection import Inspector
 from sqlalchemy.orm import backref, relation
 from sqlalchemy.exc import InvalidRequestError
 
 from ckan import model
 from ckan import logic
-from ckan.model.meta import metadata,  mapper, Session
+from ckan.model.meta import metadata, mapper, Session
 from ckan.model.types import make_uuid
 from ckan.model.domain_object import DomainObject
 from ckan.model.package import Package
@@ -597,3 +598,43 @@ def clean_harvest_log(condition):
         log.error('An error occurred while trying to clean-up the harvest log table')
 
     log.info('Harvest log table clean-up finished successfully')
+
+
+class DGUAHarvesterSource(model.Package):
+    def __init__(self, **kw):
+        super(DGUAHarvesterSource, self).__init__(self, **kw)
+
+    @classmethod
+    def get_deleted_sources(cls, status=None, organization='all', order_by='metadata_created',
+            direction='desc', offset=None, limit=None):
+        # query = Session.query(cls, model.Group) \
+        #     .join(model.Group, cls.owner_org == model.Group.id) \
+        #     .join(model.PackageExtra, cls.id == model.PackageExtra.package_id)\
+        #     .filter(cls.type == 'harvest')\
+        #     .filter(cls.state == 'deleted')
+        query = Session.query(cls)\
+            .filter(cls.state == 'deleted')\
+            .filter(cls.type == 'harvest')
+        print query.all()
+
+        # query = query.filter(model.PackageExtra.key == 'is_datapackage') \
+        #     .filter(model.PackageExtra.value == 'true')
+
+        if organization != 'all' and organization != '':
+            query = query.filter(model.Group.name == organization)
+        if status == 'private':
+            query = query.filter(cls.private == True)
+        if status == 'public':
+            query = query.filter(cls.private == False)
+        if direction == 'desc':
+            query = query.order_by(desc(order_by))
+        else:
+            query = query.order_by(asc(order_by))
+        if limit:
+            query = query.limit(limit)
+        if offset:
+            query = query.offset(offset)
+        return query
+
+
+mapper(DGUAHarvesterSource, model.package.package_table)

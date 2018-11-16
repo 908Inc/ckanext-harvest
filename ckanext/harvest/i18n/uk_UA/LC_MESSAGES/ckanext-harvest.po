@@ -707,6 +707,14 @@ msgstr "Локальний контент"
 msgid "Frequency"
 msgstr "Частота"
 
+#: canext/harvest/templates/source/deleted_search.html:3
+msgid "Deleted Harvest Sources"
+msgstr "Видалені джерела харвестингу"
+
+#: canext/harvest/templates/source/deleted_search.html:66
+msgid "No Harvest Source Found"
+msgstr "Не знайдено джерел харвестингу"
+
 #:
 msgid "Running"
 msgstr "Запущено"

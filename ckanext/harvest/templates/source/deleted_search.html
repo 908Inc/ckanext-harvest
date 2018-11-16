@@ -1,0 +1,83 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _("Deleted Harvest sources") }}{% endblock %}
+
+
+{% block breadcrumb_content %}
+  <li class="active">{{ h.nav_link(_('Harvest Sources'), named_route='{0}_search'.format(c.dataset_type)) }}</li>
+{% endblock %}
+
+
+{% if g.ckan_base_version.startswith('2.0') %}
+  {# CKAN 2.0 #}
+
+  {% block add_action_content %}
+    {{ h.snippet('snippets/add_source_button.html', dataset_type=c.dataset_type) }}
+  {% endblock %}
+{% endif %}
+
+{% block primary_content %}
+  {% if g.ckan_base_version.startswith('2.0') %}
+    {# CKAN 2.0 #}
+
+    {% include 'source/search_2.0.html' %}
+
+  {% else %}
+    {# > CKAN 2.0 #}
+
+    <section class="module">
+      <div class="module-content">
+        {% block page_primary_action %}
+        {% endblock %}
+        <h2 style="margin-bottom: 2em">{% trans %}Deleted Harvest Sources{% endtrans %}</h2>
+        {% if sources %}
+          <ul class="{{ list_class or 'dataset-list unstyled list-unstyled' }}">
+            {% for source in sources %}
+              {% set truncate = truncate or 180 %}
+              {% set truncate_title = truncate_title or 80 %}
+              {% set title = source.title or source.name %}
+              {% set source_type = h.get_pkg_dict_extra(source, 'source_type') %}
+              {% set url = h.url_for('harvest_admin', id=source.name) if within_organization else h.url_for('harvest_read', id=source.name) %}
+              {% set organization = h.get_organization(source.owner_org) %}
+              <li>
+                <div class="dataset-content">
+                  <h3 class="dataset-heading">
+                    {{ h.link_to(h.truncate(title, truncate_title), url) }}
+                    {% if source.get(state, '').startswith('draft') %}
+                      <span class="label label-info">{{ _('Draft') }}</span>
+                    {% elif source.get(state, '').startswith('deleted') %}
+                      <span class="label label-important">{{ _('Deleted') }}</span>
+                    {% endif %}
+                  </h3>
+                  {% if source.notes %}
+                    <p>{{ source.notes }}</p>
+                  {% else %}
+                    <p class="empty">{{ _('There is no description for this harvest source') }}</p>
+                  {% endif %}
+                  <p class="muted">
+                      &mdash; {{ _('Organization') }}: {{ h.link_to(organization.title or organization.name, h.url_for('organization_read', id=source.owner_org)) }}</a>
+                  </p>
+                </div>
+              </li>
+
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>{% trans %}No Harvest Source Found{% endtrans %}</p>
+        {% endif %}
+      </div>
+
+    </section>
+
+  {% endif %}
+
+{% endblock %}
+
+{% block secondary_content %}
+  {% for facet in c.facet_titles %}
+    {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, alternative_url=h.url_for('{0}_search'.format(c.dataset_type))) }}
+  {% endfor %}
+  <section class="module module-narrow module-shallow">
+    <a href="/harvest"><i class="fa fa-arrow-left"></i> {% trans %}Back To Harvest Sources Page{% endtrans %}</a>
+  </section>
+{% endblock %}
