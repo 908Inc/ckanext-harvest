@@ -29,7 +29,7 @@
       <div class="module-content">
         {% block page_primary_action %}
         {% endblock %}
-        <h2 style="margin-bottom: 2em">{% trans %}Deleted Harvest Source{% endtrans %}</h2>
+        <h2 style="margin-bottom: 2em">{% trans %}Deleted Harvest Sources{% endtrans %}</h2>
         {% if sources %}
           <ul class="{{ list_class or 'dataset-list unstyled list-unstyled' }}">
             {% for source in sources %}
@@ -63,9 +63,8 @@
             {% endfor %}
           </ul>
         {% else %}
-          <p>Deleted Harvesting Source Not Found</p>
+          <p>{% trans %}No Harvest Source Found{% endtrans %}</p>
         {% endif %}
-        {#        {{ h.snippet('snippets/source_list.html', sources=sources, show_organization=true) }}#}
       </div>
 
     </section>
