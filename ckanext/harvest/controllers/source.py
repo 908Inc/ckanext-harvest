@@ -1,6 +1,10 @@
 from ckan.controllers.package import PackageController
 from ckan.common import c
+import ckan.lib.helpers as h
+import ckan.plugins.toolkit as tk
 from ckan.lib.base import abort
+
+from ckanext.harvest.model import DGUAHarvesterSource
 
 
 class SourceController(PackageController):
@@ -10,4 +14,11 @@ class SourceController(PackageController):
         return super(SourceController, self).new(data, errors, error_summary)
 
     def show_deleted(self):
-        return 'DELETED'
+        # TODO: Access
+
+        # sources = tk.get_action('harvest_source_list')({}, {})
+        sources = [a.__dict__ for a in DGUAHarvesterSource.get_deleted_sources().all()]
+        context = {
+            'sources': sources
+        }
+        return tk.render('source/deleted_search.html', context)
