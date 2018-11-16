@@ -25,7 +25,6 @@ from ckanext.harvest.model import HarvestSource, HarvestJob, HarvestObject
 from ckanext.harvest.log import DBLogHandler
 
 
-
 log = getLogger(__name__)
 assert not log.disabled
 
@@ -229,7 +228,9 @@ class Harvest(p.SingletonPlugin, DefaultDatasetForm, DefaultTranslation):
         # Most of the routes are defined via the IDatasetForm interface
         # (ie they are the ones for a package type)
         controller = 'ckanext.harvest.controllers.view:ViewController'
+        new_source_controller = 'ckanext.harvest.controllers.source:SourceController'
 
+        map.connect('harvest_source_new', '/harvest/new', controller=new_source_controller, action='new')
         map.connect('{0}_delete'.format(DATASET_TYPE_NAME), '/' + DATASET_TYPE_NAME + '/delete/:id',controller=controller, action='delete')
         map.connect('{0}_refresh'.format(DATASET_TYPE_NAME), '/' + DATASET_TYPE_NAME + '/refresh/:id',controller=controller,
                 action='refresh')

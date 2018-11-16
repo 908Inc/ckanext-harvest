@@ -280,3 +280,5 @@ class ViewController(BaseController):
         except Exception as e:
             msg = 'An error occurred: [%s]' % str(e)
             abort(500, msg)
+
+
