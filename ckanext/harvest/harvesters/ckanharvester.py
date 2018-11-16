@@ -494,7 +494,6 @@ class CKANHarvester(HarvesterBase):
 
             # Set default groups if needed
             default_groups = self.config.get('default_groups', [])
-            # TODO: Get extras from DB
             if default_groups:
                 if not 'groups' in package_dict:
                     package_dict['groups'] = []
