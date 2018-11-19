@@ -5,13 +5,13 @@
 
   {% block errors %}{{ form.errors(error_summary) }}{% endblock %}
 
-  {% call form.input('url', id='field-url', label=_('URL'), value=data.url, error=errors.url, classes=['control-full', 'control-large']) %}
+  {% call form.input('url', id='field-url', label=_('URL'), value=data.url, error=errors.url, classes=['control-full', 'control-large'], is_required=true ) %}
     <span class="info-block">
         {{ _('This should include the http:// part of the URL') }}
       </span>
   {% endcall %}
 
-  {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, classes=['control-full'], attrs={'data-module': 'slug-preview-target'}) }}
+  {{ form.input('title', id='field-title', label=_('Title'), placeholder=_('eg. A descriptive title'), value=data.title, error=errors.title, is_required=true, classes=['control-full'], attrs={'data-module': 'slug-preview-target'}) }}
 
   {% set prefix = 'harvest' %}
   {% set domain = h.url_for('{0}_read'.format(c.dataset_type), id='', qualified=true) %}
@@ -54,7 +54,7 @@
       }}
   {% endblock %}
 
-  {{ form.markdown('notes', id='field-notes', label=_('Description'), value=data.notes, error=errors.notes) }}
+  {{ form.markdown('notes', id='field-notes', label=_('Description'), value=data.notes, error=errors.notes, is_required=true) }}
 
   {% block package_basic_fields_tags %}
     {% set tag_attrs = {'data-module': 'autocomplete', 'data-module-tags': '', 'data-module-source': '/api/2/util/tag/autocomplete?incomplete=?'} %}
@@ -149,6 +149,6 @@
       {% endif %}
     {% endblock %}
 
-  <input id="save" name="save" value="Save" type="submit" class="btn btn-primary pull-right">
+  <input id="save" name="save" value="{% trans %}Save{% endtrans %}" type="submit" class="btn btn-primary pull-right">
   </p>
 </form>
