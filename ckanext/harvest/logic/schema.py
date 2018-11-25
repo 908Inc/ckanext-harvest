@@ -30,7 +30,11 @@ from ckanext.harvest.logic.validators import (harvest_source_url_validator,
                                               harvest_object_extras_validator,
                                               )
 import ckan.plugins.toolkit as toolkit
-from ckanext.dgua.validators import dgua_tag_string_convert, dgua_tag_name_validator, dgua_tags_to_string_convert
+from ckanext.dgua.validators import (dgua_tag_string_convert,
+                                     dgua_tag_name_validator,
+                                     dgua_tags_to_string_convert,
+                                     max_length
+                                     )
 
 def harvest_source_schema():
 
@@ -84,7 +88,7 @@ def harvest_source_create_package_schema():
         'title': [not_empty],
         'notes': [not_empty],
         'update_frequency': [not_empty, convert_to_extras],
-        'purpose_of_collecting_information': [not_empty, toolkit.get_validator('max_length')(512), convert_to_extras],
+        'purpose_of_collecting_information': [not_empty, max_length(512), convert_to_extras],
         'tag_string': [not_empty, convert_to_extras],
         'tags': dgua_tags_schema(),
         'language': [not_empty, convert_to_extras],
@@ -116,21 +120,11 @@ def harvest_source_show_package_schema():
         'revision_id': [],
         'revision_timestamp': [ignore_missing],
         'tracking_summary': [ignore_missing],
-        'update_frequency': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('ignore_missing')],
-        'purpose_of_collecting_information': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('ignore_missing')],
-        'language': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('not_empty')],
-        'is_datapackage': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('ignore_missing')],
-        'tag_string': [convert_from_extras,
-            toolkit.get_validator('not_empty')
-        ],
+        'update_frequency': [convert_from_extras, ignore_missing],
+        'purpose_of_collecting_information': [convert_from_extras, ignore_missing],
+        'language': [convert_from_extras, not_empty],
+        'is_datapackage': [convert_from_extras, ignore_missing],
+        'tag_string': [convert_from_extras, not_empty]
     })
 
     schema['__extras'] = [ignore]
