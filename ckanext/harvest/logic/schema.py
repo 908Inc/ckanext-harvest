@@ -120,21 +120,11 @@ def harvest_source_show_package_schema():
         'revision_id': [],
         'revision_timestamp': [ignore_missing],
         'tracking_summary': [ignore_missing],
-        'update_frequency': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('ignore_missing')],
-        'purpose_of_collecting_information': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('ignore_missing')],
-        'language': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('not_empty')],
-        'is_datapackage': [
-            toolkit.get_converter('convert_from_extras'),
-            toolkit.get_validator('ignore_missing')],
-        'tag_string': [convert_from_extras,
-            toolkit.get_validator('not_empty')
-        ],
+        'update_frequency': [convert_from_extras, ignore_missing],
+        'purpose_of_collecting_information': [convert_from_extras, ignore_missing],
+        'language': [convert_from_extras, not_empty],
+        'is_datapackage': [convert_from_extras, ignore_missing],
+        'tag_string': [convert_from_extras, not_empty]
     })
 
     schema['__extras'] = [ignore]
