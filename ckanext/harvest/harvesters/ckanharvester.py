@@ -3,6 +3,7 @@ import urllib2
 import httplib
 import datetime
 import socket
+import logging
 
 from ckan import model
 from ckan.logic import ValidationError, NotFound, get_action
@@ -11,8 +12,9 @@ from ckan.lib.munge import munge_name
 from ckan.plugins import toolkit
 
 from ckanext.harvest.model import HarvestObject
+from ckanext.dgua.plugin import datapackage_generate
 
-import logging
+
 log = logging.getLogger(__name__)
 
 from base import HarvesterBase
@@ -177,6 +179,8 @@ class CKANHarvester(HarvesterBase):
             raise e
 
         return config
+
+
 
     def gather_stage(self, harvest_job):
         log.debug('In CKANHarvester gather_stage (%s)',
@@ -566,6 +570,8 @@ class CKANHarvester(HarvesterBase):
 
             result = self._create_or_update_package(
                 package_dict, harvest_object, package_dict_form='package_show')
+
+            datapackage_generate(package_dict.get('id'))
 
             return result
         except ValidationError, e:
