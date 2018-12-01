@@ -1,4 +1,5 @@
-{% set authorized_user = h.check_access('harvest_source_create') %}
+{# set authorized_user = h.check_access('harvest_source_create') #}
+{% set authorized_user = true if c.userobj and c.userobj.sysadmin %}
 
 {% if authorized_user %}
   <a href="{{ h.url_for('{0}_new'.format(dataset_type)) }}" class="btn btn-primary">
