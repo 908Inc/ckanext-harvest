@@ -434,7 +434,7 @@ msgstr "Джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/source/edit.html:3
 msgid "Edit harvest source"
-msgstr "Джерела (ресурси) харвестингу"
+msgstr "Керування"
 
 #: ckanext/harvest/templates/source/new.html:5
 msgid "Create Harvest Source"
@@ -588,7 +588,7 @@ msgstr "Повернутись до сторінки джерел (ресурс�
 
 #: ckanext/harvest/templates/source/read_base.html:54
 msgid "About"
-msgstr ""
+msgstr "Опис"
 
 #: ckanext/harvest/templates/source/search.html:44
 msgid "Relevance"
