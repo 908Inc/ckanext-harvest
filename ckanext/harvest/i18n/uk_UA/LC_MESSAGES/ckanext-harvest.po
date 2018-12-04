@@ -420,7 +420,7 @@ msgstr "Завдання"
 
 #: ckanext/harvest/templates/source/base.html:16
 msgid "Organizations"
-msgstr ""
+msgstr "Розпорядники"
 
 #: ckanext/harvest/templates/source/base.html:18
 #: ckanext/harvest/templates/source/base.html:21
@@ -430,7 +430,7 @@ msgstr ""
 #: ckanext/harvest/templates/source/org_source_list.html:19
 #: ckanext/harvest/templates/source/search.html:7
 msgid "Harvest Sources"
-msgstr "Розпорядники"
+msgstr "Джерела (ресурси) харвестингу"
 
 #: ckanext/harvest/templates/source/edit.html:3
 msgid "Edit harvest source"
