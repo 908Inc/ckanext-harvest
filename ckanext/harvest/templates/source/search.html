@@ -66,7 +66,9 @@
   {% for facet in c.facet_titles %}
       {{ h.snippet('snippets/facet_list.html', title=c.facet_titles[facet], name=facet, alternative_url=h.url_for('{0}_search'.format(c.dataset_type))) }}
   {% endfor %}
+  {% if c.userobj.sysadmin %}
   <section class="module module-narrow module-shallow">
     <p style="padding-left: 15px"><a href="{{ h.url_for('harvest_sources_deleted') }}"><i class="fa fa-trash-o"></i> {% trans %}Deleted Harvest Sources{% endtrans %}</a></p>
   </section>
+  {% endif %}
 {% endblock %}
