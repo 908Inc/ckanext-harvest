@@ -4,6 +4,7 @@ import httplib
 import datetime
 import socket
 import logging
+import re
 
 from ckan import model
 from ckan.logic import ValidationError, NotFound, get_action
@@ -550,6 +551,9 @@ class CKANHarvester(HarvesterBase):
             # Setting new harvested package default values
 
             package_dict['private'] = True
+
+            tagname_match = re.compile('[\w \-.]*$', re.UNICODE)
+            package_dict['tags'] = [tag for tag in package_dict.get('tags') if tagname_match.match(tag.get('name'))]
 
             if not 'tag_string' in package_dict or not package_dict['tag_string']:
                 package_dict['tag_string'] = source_dataset.get('tag_string', '')
