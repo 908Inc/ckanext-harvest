@@ -512,7 +512,7 @@ msgstr "Опис"
 
 #: ckanext/harvest/templates/source/new_source_form.html:61
 msgid "Tags"
-msgstr "Тагі"
+msgstr "Ключові слова"
 
 #: ckanext/harvest/templates/source/new_source_form.html:61
 msgid "eg. economy, health, government"
