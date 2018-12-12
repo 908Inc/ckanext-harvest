@@ -9,6 +9,7 @@ import re
 from ckan import model
 from ckan.logic import ValidationError, NotFound, get_action
 from ckan.lib.helpers import json
+import ckan.lib.plugins as lib_plugins
 from ckan.lib.munge import munge_name
 from ckan.plugins import toolkit
 
@@ -571,6 +572,15 @@ class CKANHarvester(HarvesterBase):
 
             if not 'notes' in package_dict or not package_dict['notes']:
                 package_dict['notes'] = source_dataset.get('notes', '')
+
+            # Deleting extra keys from extras
+            package_plugin = lib_plugins.lookup_package_plugin(package_dict.get('type', None))
+            package_schema = package_plugin.create_package_schema()
+            for schema_key in package_schema.keys():
+                for extra_key in package_dict['extras']:
+                    if extra_key.get('key') == schema_key:
+                        package_dict[extra_key.get('key')] = extra_key.get('value')
+                        package_dict['extras'].remove(extra_key)
 
             result = self._create_or_update_package(
                 package_dict, harvest_object, package_dict_form='package_show')
