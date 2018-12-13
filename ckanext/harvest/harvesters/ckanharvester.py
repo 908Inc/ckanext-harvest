@@ -573,14 +573,15 @@ class CKANHarvester(HarvesterBase):
             if not 'notes' in package_dict or not package_dict['notes']:
                 package_dict['notes'] = source_dataset.get('notes', '')
 
-            # Deleting extra keys from extras
+            # Deleting extra keys from extras if extras keys in schema
             package_plugin = lib_plugins.lookup_package_plugin(package_dict.get('type', None))
             package_schema = package_plugin.create_package_schema()
-            for schema_key in package_schema.keys():
-                for extra_key in package_dict['extras']:
-                    if extra_key.get('key') == schema_key:
-                        package_dict[extra_key.get('key')] = extra_key.get('value')
-                        package_dict['extras'].remove(extra_key)
+            if set([el.get('key') for el in package_dict.get('extras', [])]).intersection(set(package_schema.keys())):
+                for schema_key in package_schema.keys():
+                    for extra_key in package_dict['extras']:
+                        if extra_key.get('key') == schema_key:
+                            package_dict[extra_key.get('key')] = extra_key.get('value')
+                            package_dict['extras'].remove(extra_key)
 
             result = self._create_or_update_package(
                 package_dict, harvest_object, package_dict_form='package_show')
