@@ -363,7 +363,7 @@ msgstr "Переглянути повний звіт"
 #: ckanext/harvest/templates/source/admin_base.html:7
 #: ckanext/harvest/templates/source/read_base.html:4
 msgid "Admin"
-msgstr "Адмінистратор"
+msgstr "Адміністратор"
 
 #: ckanext/harvest/templates/source/admin_base.html:14
 msgid ""
